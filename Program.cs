@@ -11,6 +11,7 @@ namespace Capstone_Project
 {
     public class Program
     {
+        //This Project takes too long
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
