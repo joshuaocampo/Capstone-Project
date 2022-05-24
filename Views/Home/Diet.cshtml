@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Diet";
+}
+<html>
+<head>
+    <script>
+		//function that display value
+		function dis(val)
+		{
+			document.getElementById("result").value+=val
+		}
+
+		//function that evaluates the digit and return result
+		function solve()
+		{
+			let x = document.getElementById("result").value
+			let y = eval(x)
+			document.getElementById("result").value = y
+		}
+
+		//function that clear the display
+		function clr()
+		{
+			document.getElementById("result").value = ""
+		}
+    </script>
+    <!-- for styling -->
+    <style>
+        .title {
+            margin-bottom: 10px;
+            text-align: center;
+            width: 210px;
+            color: green;
+            border: solid black 2px;
+        }
+
+        input[type="button"] {
+            --color: rgb(56, 91, 209);
+            --background-color: rgb(207, 207, 207);
+            border: solid black 2px;
+            width: 100%
+        }
+
+        input[type="text"] {
+            --color:rgb(56, 91, 209);
+            --background-color: rgb(207, 207, 207);
+            border: solid black 2px;
+            width: 100%
+        }
+    </style>
+</head>
+<!-- create table -->
+<body style="background-image: url(https://i.pinimg.com/originals/69/00/ea/6900ea579e3526954c80b70487a78680.gif); background-repeat: no-repeat; background-size: cover; ">
+
+    <p>YOUR TOTAL CALORIES IS 3000</p>
+    <div class=title></div>
+    <table border="1">
+        <tr>
+            <td colspan="3"><input type="text" id="result" /></td>
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" onclick="clr()" /> </td>
+        </tr>
+        <tr>
+            <!-- create button and assign value to each button -->
+            <!-- dis("1") will call function dis to display value -->
+            <td><input type="button" value="1" onclick="dis('1')" /> </td>
+            <td><input type="button" value="2" onclick="dis('2')" /> </td>
+            <td><input type="button" value="3" onclick="dis('3')" /> </td>
+            <td><input type="button" value="/" onclick="dis('/')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')" /> </td>
+            <td><input type="button" value="5" onclick="dis('5')" /> </td>
+            <td><input type="button" value="6" onclick="dis('6')" /> </td>
+            <td><input type="button" value="-" onclick="dis('-')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')" /> </td>
+            <td><input type="button" value="8" onclick="dis('8')" /> </td>
+            <td><input type="button" value="9" onclick="dis('9')" /> </td>
+            <td><input type="button" value="+" onclick="dis('+')" /> </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="dis('.')" /> </td>
+            <td><input type="button" value="0" onclick="dis('0')" /> </td>
+            <!-- solve function call function solve to evaluate value -->
+            <td><input type="button" value="=" onclick="solve()" /> </td>
+            <td><input type="button" value="*" onclick="dis('*')" /> </td>
+        </tr>
+    </table>
+    <div class="modal-body">
+      <button type ="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mymodal">
+      </button>
+      <div class="modal show" id="mymodal" role="dialog">
+          <div class="modal-dialog">
+          </div>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+              Diet Options
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Meal Plan For The Day</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <h3>Breakfast:</h3>
+                          <h3>Lunch:</h3>
+                          <h3>Dinner:</h3>
+                          <h3>Total Calories: 3000</h3>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <!-- <button type="button" class="btn btn-primary">Save changes</button>-->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+        </div>
+      
+
+</body>
+</html>

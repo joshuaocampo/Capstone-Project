@@ -1,0 +1,33 @@
+﻿@model Capstone_Project.Models.UserModel
+
+<div>
+    <h4>Login Successful!</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Calories)
+        </dt>
+        <dd class="col-sm-10">
+            <!--  @Html.DisplayFor(model => model.Calories) -->
+            @Model.Calories
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+    </dl>
+</div>
+<body style="background-image: url(https://64.media.tumblr.com/c1972007f2beffba8a5fa56fb0d0d5d8/tumblr_olcnc9xE9i1tdnbbbo1_500.gifv); background-repeat: no-repeat; background-size: cover; ">
+</body>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
